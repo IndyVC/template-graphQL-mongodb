@@ -1,0 +1,19 @@
+.c-notes{
+    display: flex;
+    flex-direction: column;
+
+    .c-note{
+        .c-note__heading{
+            padding: 3px;
+            background-color: $border-color;
+            font-weight: 600;
+        }
+
+        p{
+
+            padding: 8px;
+        }
+    }
+
+}
+

@@ -1,0 +1,7 @@
+.button.is-success{
+    background-color: $selected-color;
+
+    &:hover{
+        background-color: darken($selected-color, 5%);
+    }
+}

@@ -1,0 +1,43 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.0/css/bulma.min.css"
+  integrity="sha256-aPeK/N8IHpHsvPBCf49iVKMdusfobKo2oxF8lRruWJg=" crossorigin="anonymous" />
+
+<div id="app">
+  <div class="c-main-container">
+    <div class="c-main-navigation">
+      <div class="c-main-navigation__home">
+        <button class="button c-main-navigation__button">
+          <i class="fab fa-leanpub"></i>
+        </button>
+      </div>
+      <div class="c-main-navigation__menu">
+        <button class="button c-main-navigation__button">
+          <i class="fas fa-search"></i>
+        </button>
+        <ul>
+          <li>
+            <a class="button c-main-navigation__button" routerLink="/skillz/skills" (click)="showMenu('skills')">
+              <i class="fas fa-user-friends"></i>
+            </a>
+          </li>
+          <li>
+            <a class="button c-main-navigation__button" routerLink="/calc" (click)="showMenu('calc')">
+              <i class="fab fa-wpforms"></i>
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div>
+        <button class="button c-main-navigation__button">
+          <i class="fas fa-cog"></i>
+        </button>
+      </div>
+    </div>
+    <div class="c-main-view">
+      <app-main-sub-navigation [showCalcNav]="showCalcNav" [showSkillsNav]="showSkillsNav">
+      </app-main-sub-navigation>
+      <div class="c-main-content">
+        <router-outlet></router-outlet>
+      </div>
+    </div>
+  </div>
+</div>

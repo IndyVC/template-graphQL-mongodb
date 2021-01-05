@@ -1,0 +1,26 @@
+.c-info-overview{
+    margin: 0 10px 20px;
+    .c-info-overview__heading{
+        text-transform: uppercase;
+        font-weight: 600;
+        border-bottom: 1px solid $panel-border-color;
+        .fa-file-alt{
+
+            color: $selected-color;
+
+        }
+    }
+    
+    .c-info-overview__body{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        margin-top: 5px;
+        .column{
+            padding: 0;
+        }
+    
+    }
+
+}
+

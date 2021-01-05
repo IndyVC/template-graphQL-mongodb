@@ -1,0 +1,7 @@
+.tabs{
+    margin: 10px;
+}
+    .tabs.is-toggle li.is-active a{
+        background-color:$selected-color;
+        border-color: $selected-color;
+    }

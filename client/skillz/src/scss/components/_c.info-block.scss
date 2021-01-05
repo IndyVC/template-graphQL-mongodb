@@ -1,0 +1,18 @@
+.c-info-block{
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    color: black;
+    
+    &__label{
+        color: $info-label-color;
+    }
+
+    address{
+        font-style: normal;
+    }
+}
+
+.columns{
+    width: 100%;
+}

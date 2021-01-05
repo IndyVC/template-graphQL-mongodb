@@ -1,0 +1,38 @@
+.c-perks{
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+
+    .c-perk{
+        display: flex;
+        flex-direction: row;
+        background-color: $selected-color;
+        margin: 10px;
+        border-radius: 5px;
+        box-shadow: 1px 1px 3px 1px darken($border-color,10%);
+        align-items: center;
+        width: 210px;
+        height: 50px;
+        .c-perk__icon{
+           
+            font-size: 60px;
+            position: relative;
+            bottom: 15px;
+            
+            .icon{
+                color: white;
+            }
+
+        }
+
+        .c-perk__title{
+            color: white;
+           
+        }
+
+    }
+
+}
