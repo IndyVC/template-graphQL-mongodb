@@ -1,6 +1,6 @@
 using System;
 
-namespace Clovis
+namespace Clovis.Api
 {
     public class WeatherForecast
     {

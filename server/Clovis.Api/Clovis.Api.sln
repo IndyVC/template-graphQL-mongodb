@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30804.86
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Clovis", "Clovis\Clovis.csproj", "{61DE7984-31E9-4537-96C2-0C9CEB1DA971}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Clovis.Api", "Clovis.Api.csproj", "{34194B66-47E0-4C96-A2B4-427E0A4EC11C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,15 +11,15 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{61DE7984-31E9-4537-96C2-0C9CEB1DA971}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{61DE7984-31E9-4537-96C2-0C9CEB1DA971}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{61DE7984-31E9-4537-96C2-0C9CEB1DA971}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{61DE7984-31E9-4537-96C2-0C9CEB1DA971}.Release|Any CPU.Build.0 = Release|Any CPU
+		{34194B66-47E0-4C96-A2B4-427E0A4EC11C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{34194B66-47E0-4C96-A2B4-427E0A4EC11C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{34194B66-47E0-4C96-A2B4-427E0A4EC11C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{34194B66-47E0-4C96-A2B4-427E0A4EC11C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {A768A6B4-C1B0-446E-B2C8-4F1CE0580E58}
+		SolutionGuid = {F52BCDD7-298B-4480-85DC-6D29AE24F3EC}
 	EndGlobalSection
 EndGlobal
