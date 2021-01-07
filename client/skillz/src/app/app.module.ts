@@ -13,7 +13,7 @@ import { QuestionsComponent } from './components/Evaluations/questions/questions
 import { SkillsComponent } from './components/Skills/skills/skills.component';
 import { WageCalculatorComponent } from './components/WageCalculator/wage-calculator/wage-calculator.component';
 import { EvaluationsComponent } from './components/Evaluations/evaluations/evaluations.component';
-
+import { HttpClientModule } from '@angular/common/http';
 @NgModule({
   declarations: [
     AppComponent,
@@ -27,8 +27,8 @@ import { EvaluationsComponent } from './components/Evaluations/evaluations/evalu
     WageCalculatorComponent,
     EvaluationsComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, FontAwesomeModule],
+  imports: [BrowserModule, HttpClientModule, AppRoutingModule, FontAwesomeModule,],
   providers: [],
   bootstrap: [AppComponent],
 })
-export class AppModule {}
+export class AppModule { }

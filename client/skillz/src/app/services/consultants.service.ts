@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import axios from 'axios';
+import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
 @Injectable({
@@ -7,13 +7,11 @@ import { Observable } from 'rxjs';
 })
 export class ConsultantsService {
 
-  p
 
-  constructor() {
-    console.log("created")
+  constructor(private httpClient: HttpClient) {
   }
 
-  test() {
-    axios.get("https://jsonplaceholder.typicode.com/posts");
+  getPosts(): Observable<any> {
+    return this.httpClient.get("https://jsonplaceholder.typicode.com/todos");
   }
 }
