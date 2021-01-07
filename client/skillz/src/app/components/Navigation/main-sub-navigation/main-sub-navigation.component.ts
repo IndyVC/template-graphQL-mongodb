@@ -9,12 +9,8 @@ export class MainSubNavigationComponent implements OnInit {
   @Input() showSkillsNav: Boolean;
   @Input() showCalcNav: Boolean;
   constructor() {
-    console.log(window.location);
   }
 
-  ngOnInit(): void {}
+  ngOnInit(): void { }
 
-  isActive():string {
-    if(window.location.pathname)
-  }
 }

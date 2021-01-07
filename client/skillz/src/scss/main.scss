@@ -29,3 +29,10 @@
 // THEME
 @import "./theme/t.breadcrumb";
 @import "./theme/t.button";
+
+//FIX Vue -> Angular
+.button {
+  &:focus {
+    color: $selected-color !important;
+  }
+}
