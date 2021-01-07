@@ -1,5 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { HttpClientModule } from '@angular/common/http';
+import { ReactiveFormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -13,7 +15,7 @@ import { QuestionsComponent } from './components/Evaluations/questions/questions
 import { SkillsComponent } from './components/Skills/skills/skills.component';
 import { WageCalculatorComponent } from './components/WageCalculator/wage-calculator/wage-calculator.component';
 import { EvaluationsComponent } from './components/Evaluations/evaluations/evaluations.component';
-import { HttpClientModule } from '@angular/common/http';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -27,7 +29,7 @@ import { HttpClientModule } from '@angular/common/http';
     WageCalculatorComponent,
     EvaluationsComponent,
   ],
-  imports: [BrowserModule, HttpClientModule, AppRoutingModule, FontAwesomeModule,],
+  imports: [BrowserModule, HttpClientModule, AppRoutingModule, FontAwesomeModule, ReactiveFormsModule],
   providers: [],
   bootstrap: [AppComponent],
 })
