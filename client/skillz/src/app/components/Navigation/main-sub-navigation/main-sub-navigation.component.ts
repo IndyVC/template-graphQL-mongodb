@@ -8,7 +8,13 @@ import { Component, Input, OnInit } from '@angular/core';
 export class MainSubNavigationComponent implements OnInit {
   @Input() showSkillsNav: Boolean;
   @Input() showCalcNav: Boolean;
-  constructor() {}
+  constructor() {
+    console.log(window.location);
+  }
 
   ngOnInit(): void {}
+
+  isActive():string {
+    if(window.location.pathname)
+  }
 }
