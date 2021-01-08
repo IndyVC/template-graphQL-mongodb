@@ -1,17 +1,15 @@
 <div class="c-content-page">
-    <div *ngFor='let c of consultants$ | async'>
-        <p>{{c | json}}</p>
-    </div>
     <header class="c-content-page__header">
         <div class="c-content-page__header-title">
-            <h1>CONSULT.[property] hardcoded</h1>
+            <h1>{{(consultant$ | async)?.firstName + " " + (consultant$ | async)?.lastName}}</h1>
             <nav class="breadcrumb" aria-label="breadcrumbs">
                 <ul>
                     <li><a href="#">Skillz</a></li>
                     <li><a href="/skillz/consultants">Consultants</a></li>
                     <li class="is-active">
                         <a href="#" aria-current="page">
-                        CONSULT.[property] hardcoded</a>
+                            {{(consultant$ | async)?.firstName + " " + (consultant$ | async)?.lastName}}
+                        </a>
                     </li>
                 </ul>
             </nav>
@@ -56,8 +54,8 @@
                                     Function name
                                 </span>
                                 <span class="c-info-block__value">
-                                    CONSULT.[property] hardcoded 
-                                    CONSULT.[property] hardcoded
+                                    {{(consultant$ | async)?.functionLevel}}
+                                    {{(consultant$ | async)?.functionName}}
                                 </span>
                             </div>
                         </td>
@@ -68,7 +66,7 @@
                                     Personal email
                                 </span>
                                 <span class="c-info-block__value">
-                                    <a href="mailto:kevin.derudder@gmail.com">CONSULT.[property] hardcoded</a>
+                                    <a href="mailto:kevin.derudder@gmail.com">{{(consultant$ | async)?.email}}</a>
                                 </span>
                             </div>
                         </td>
@@ -78,7 +76,7 @@
                                     Work email
                                 </span>
                                 <span class="c-info-block__value">
-                                    <a href="mailto:kevin.derudder@gmail.com">CONSULT.[property] hardcoded</a>
+                                    <a href="mailto:kevin.derudder@gmail.com">{{(consultant$ | async)?.email}}</a>
                                 </span>
                             </div>
                         </td>
@@ -102,7 +100,7 @@
                                     Work phone
                                 </span>
                                 <span class="c-info-block__value">
-                                    CONSULT.[property] hardcoded
+                                   {{(consultant$ | async)?.phone}}
                                 </span>
                             </div>
                         </td>
@@ -112,7 +110,7 @@
                                     Personal phone
                                 </span>
                                 <span class="c-info-block__value">
-                                    CONSULT.[property] hardcoded
+                                    {{(consultant$ | async)?.mobilePhone}}
                                 </span>
                             </div>
                         </td>
@@ -126,14 +124,12 @@
             </p>
             <p class="panel-tabs">
                 <a [ngClass]="{ 'is-active': panelActive === 'contracts' }"
-                   (click)="show($event, 'contracts')">Contract</a>
+                    (click)="show($event, 'contracts')">Contract</a>
                 <a [ngClass]="{ 'is-active': panelActive === 'passedContracts' }"
-                   (click)="show($event, 'passedContracts')">Contract History</a>
-                <a (click)="show($event, 'evals')"
-                    [ngClass]="{ 'is-active': panelActive === 'evals' }">Evaluations
+                    (click)="show($event, 'passedContracts')">Contract History</a>
+                <a (click)="show($event, 'evals')" [ngClass]="{ 'is-active': panelActive === 'evals' }">Evaluations
                 </a>
-                <a (click)="show($event, 'skills')"
-                   [ngClass]="{ 'is-active': panelActive === 'skills' }">Skills</a>
+                <a (click)="show($event, 'skills')" [ngClass]="{ 'is-active': panelActive === 'skills' }">Skills</a>
                 <a>Vault</a>
                 <a>Certificates</a>
                 <a (click)="show($event, 'notes')" [ngClass]="{ 'is-active': panelActive === 'notes' }">Notes</a>
@@ -235,7 +231,7 @@
             </div>
 
             <div class="panel-block panel-block--no-padding panel-tabs__tabinfo"
-               [ngClass]="{ 'is-active': panelActive === 'passedContracts' }">
+                [ngClass]="{ 'is-active': panelActive === 'passedContracts' }">
                 <table class="c-table">
                     <thead>
                         <tr>

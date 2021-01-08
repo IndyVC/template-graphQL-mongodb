@@ -1,3 +1,11 @@
-import { createAction } from '@ngrx/store';
+import { createAction, props } from '@ngrx/store';
+import { Consultant } from 'src/app/models/consultant';
 
-export const getAll = createAction('[Consultant] GetAll');
+export const set_consultants = createAction(
+  '[Consultant] set_consultants',
+  props<{ consultants: Consultant[] }>()
+);
+export const set_consultant = createAction(
+  '[Consultant] set_consultant',
+  props<{ consultant: Consultant }>()
+);

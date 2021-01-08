@@ -1,15 +1,20 @@
 import { createReducer, on } from '@ngrx/store';
-import { getAll } from './consultants.actions';
+import { set_consultant, set_consultants } from './consultants.actions';
 
 export const initialState = {
   consultants: [],
+  consultant: null,
 };
 
 const _consultantsReducer = createReducer(
   initialState,
-  on(getAll, (state) => ({
+  on(set_consultant, (state, { consultant }) => ({
     ...state,
-    consultants: ['Indy', 'Sofie'],
+    consultant: consultant,
+  })),
+  on(set_consultants, (state, { consultants }) => ({
+    ...state,
+    consultants: consultants,
   }))
 );
 
