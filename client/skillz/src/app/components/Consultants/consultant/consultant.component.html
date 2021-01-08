@@ -1,4 +1,7 @@
 <div class="c-content-page">
+    <div *ngFor='let c of consultants$ | async'>
+        <p>{{c | json}}</p>
+    </div>
     <header class="c-content-page__header">
         <div class="c-content-page__header-title">
             <h1>CONSULT.[property] hardcoded</h1>
@@ -474,7 +477,7 @@
                 <p class="modal-card-title">Add new skill to Consultant</p>
                 <button class="delete" aria-label="close" (click)="closeAndCancelAddSkillModal()"></button>
             </header>
-            <section class="modal-card-body" []>
+            <section class="modal-card-body">
                 <div class="field">
                     <label class="label">Category</label>
                     <div class="control">
