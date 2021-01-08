@@ -1,4 +1,4 @@
-import { BaseAuditableEntity } from './baseAuditableEntity';
+import { BaseAuditableEntity } from '../base/baseAuditableEntity';
 
 export class Person extends BaseAuditableEntity {
   firstName: string;

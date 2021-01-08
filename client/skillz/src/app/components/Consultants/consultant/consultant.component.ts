@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Observable, fromEvent, pipe, of } from 'rxjs';
 import { ConsultantsService } from 'src/app/services/consultants/consultants.service';
 import { Store } from '@ngrx/store';
-import { Consultant } from 'src/app/models/consultant';
+import { Consultant } from 'src/app/models/consultants/consultant';
 import {
   set_consultants,
   set_consultant,

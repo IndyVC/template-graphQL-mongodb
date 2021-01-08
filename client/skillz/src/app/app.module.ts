@@ -20,6 +20,7 @@ import { EvaluationsComponent } from './components/Evaluations/evaluations/evalu
 //State (ngrx)
 import { StoreModule } from '@ngrx/store';
 import { consultantsReducer } from './store/consultants/consultants.reducer';
+import { evaluationsReducer } from './store/evaluations/evaluations.reducer';
 
 @NgModule({
   declarations: [
@@ -41,7 +42,10 @@ import { consultantsReducer } from './store/consultants/consultants.reducer';
     FontAwesomeModule,
     ReactiveFormsModule,
     FormsModule,
-    StoreModule.forRoot({ consultants: consultantsReducer }),
+    StoreModule.forRoot({
+      consultants: consultantsReducer,
+      evaluations: evaluationsReducer,
+    }),
   ],
   providers: [],
   bootstrap: [AppComponent],

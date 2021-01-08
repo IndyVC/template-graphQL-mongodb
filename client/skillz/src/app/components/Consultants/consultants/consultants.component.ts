@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
-import { Consultant } from 'src/app/models/consultant';
+import { Consultant } from 'src/app/models/consultants/consultant';
 import { ConsultantsService } from 'src/app/services/consultants/consultants.service';
 
 @Component({

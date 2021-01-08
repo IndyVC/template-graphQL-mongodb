@@ -1,5 +1,5 @@
 import { createAction, props } from '@ngrx/store';
-import { Consultant } from 'src/app/models/consultant';
+import { Consultant } from 'src/app/models/consultants/consultant';
 
 export const set_consultants = createAction(
   '[Consultant] set_consultants',
