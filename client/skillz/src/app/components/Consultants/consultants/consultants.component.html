@@ -1,1 +1,109 @@
-<p>consultants works!</p>
+<div class="c-content-page">
+    <header class="c-content-page__header">
+      <div class="c-content-page__header-title">
+        <h1>Consultants</h1>
+        <nav class="breadcrumb" aria-label="breadcrumbs">
+          <ul>
+            <li><a href="#">Skillz</a></li>
+            <li><a href="#" aria-current="page">Consultants</a></li>
+              
+          </ul>
+        </nav>
+      </div>
+      <div class="c-content-page__header-actions">
+        <button class="button is-primary" (click)="showAddConsultantModal()">
+          <span class="icon"><i class="fas fa-plus"></i></span>
+          <span>Add Consultant</span>
+        </button>
+      </div>
+    </header>
+    <section class="c-content-page__content">
+      <table class="c-table c-questions">
+        <thead>
+          <tr>
+            <th></th>
+            <th>Firstname</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Work phone</th>
+            <th>Personal phone</th>
+          </tr>
+        </thead>
+        <tbody>
+         <tr  class="c-question" *ngFor="let c of consultants$ | async"(click)="goToConsultantDetail(c.id)">
+         
+           <td class="c-question__icon">
+              <i class="fas fa-user-alt"></i>
+            </td>
+            <td class="c-question__name">{{c.firstName}}</td>
+            <td class="c-question__name">{{c.lastName}}</td>
+            <td class="c-question__email"><a href="">{{c.email}}</a></td>
+           <td class="c-question__phone">{{c.phone}} </td>
+           <td class="c-question__phone">{{c.mobilePhone}} </td>
+            
+          
+          </tr>
+         
+        </tbody>
+      </table>
+    </section>
+
+    <div class="modal" [ngClass]="{ 'is-active': isActive }">
+      <div class="modal-background"></div>
+      <div class="modal-card">
+        <header class="modal-card-head">
+          <p class="modal-card-title">New Consultant</p>
+          <button
+            class="delete"
+            aria-label="close"
+           (click)="closeAddConsultantModal()"
+          ></button>
+        </header>
+        <section class="modal-card-body">
+          <div class="field">
+            <label class="label">Firstname</label>
+            <div class="control">
+              <input class="input" type="text" placeholder="firstname..." [(ngModel)]="consultant.firstname" />
+            </div>
+          </div>
+          <div class="field">
+            <label class="label">Lastname</label>
+            <div class="control">
+              <input class="input" type="text" placeholder="lastname..." [(ngModel)]="consultant.lastname" />
+            </div>
+          </div>
+
+          <div class="field">
+            <label class="label">Email</label>
+            <div class="control">
+              <input class="input" type="text" placeholder="email..." [(ngModel)]="consultant.email" />
+            </div>
+          </div>
+
+           <div class="field">
+            <label class="label">Work Phone</label>
+            <div class="control">
+              <input class="input" type="text" placeholder="work phone..." [(ngModel)]="consultant.workphone" />
+            </div>
+          </div>
+
+           <div class="field">
+            <label class="label">Personal Phone</label>
+            <div class="control">
+              <input class="input" type="text" placeholder="personal phone..." [(ngModel)]="consultant.personalphone" />
+            </div>
+          </div>
+
+        
+
+         
+        </section>
+        <footer class="modal-card-foot">
+          <button class="button is-success" (click)="saveConsultant()" >Add Consultant</button>
+          <button class="button" (click)="closeAndCancelAddConsultantModal()">
+            Cancel
+          </button>
+        </footer>
+      </div>
+    </div>
+  </div>

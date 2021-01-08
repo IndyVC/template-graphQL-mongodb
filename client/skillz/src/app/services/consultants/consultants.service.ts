@@ -16,4 +16,10 @@ export class ConsultantsService {
       .get(`${API_URL}/Consultants`)
       .pipe(map((v) => v as Array<Consultant>));
   }
+
+  getConsultantById(id): Observable<Consultant> {
+    return this.httpClient
+      .get(`${API_URL}/Consultants/${id}`)
+      .pipe(map((v) => v as Consultant));
+  }
 }

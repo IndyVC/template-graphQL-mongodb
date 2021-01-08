@@ -1,12 +1,12 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
-import { ReactiveFormsModule } from '@angular/forms';
-
-//Components
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+
+//Components
 import { MainSubNavigationComponent } from './components/Navigation/main-sub-navigation/main-sub-navigation.component';
 import { ConsultantComponent } from './components/Consultants/consultant/consultant.component';
 import { ConsultantsComponent } from './components/Consultants/consultants/consultants.component';
@@ -40,6 +40,7 @@ import { consultantsReducer } from './store/consultants/consultants.reducer';
     AppRoutingModule,
     FontAwesomeModule,
     ReactiveFormsModule,
+    FormsModule,
     StoreModule.forRoot({ consultants: consultantsReducer }),
   ],
   providers: [],

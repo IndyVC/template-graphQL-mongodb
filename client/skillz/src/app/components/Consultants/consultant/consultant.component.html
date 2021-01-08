@@ -49,7 +49,7 @@
                 <table class="c-info-table">
                     <tr>
                         <td>
-                            <div class="column c-info-block">
+                            <div class="c-info-block">
                                 <span class="c-info-block__label">
                                     Function name
                                 </span>
@@ -61,7 +61,7 @@
                         </td>
 
                         <td>
-                            <div class="column c-info-block">
+                            <div class="c-info-block">
                                 <span class="c-info-block__label">
                                     Personal email
                                 </span>
@@ -95,7 +95,7 @@
                     </tr>
                     <tr>
                         <td>
-                            <div class=" c-info-block">
+                            <div class="c-info-block">
                                 <span class="c-info-block__label">
                                     Work phone
                                 </span>
@@ -105,7 +105,7 @@
                             </div>
                         </td>
                         <td>
-                            <div class="column c-info-block">
+                            <div class="c-info-block">
                                 <span class="c-info-block__label">
                                     Personal phone
                                 </span>
@@ -138,7 +138,7 @@
                 <h2>Current</h2>
                 <div class="c-info-overview">
                     <div class="c-info-overview__body">
-                        <div class="column c-info-block">
+                        <div class="c-info-block">
                             <span class="c-info-block__label">
                                 Functie
                             </span>
@@ -147,7 +147,7 @@
                             </span>
                         </div>
 
-                        <div class="column c-info-block">
+                        <div class="c-info-block">
                             <span class="c-info-block__label">
                                 Start date
                             </span>
@@ -156,7 +156,7 @@
                             </span>
                         </div>
 
-                        <div class="column c-info-block">
+                        <div class="c-info-block">
                             <span class="c-info-block__label">
                                 End date
                             </span>
@@ -165,7 +165,7 @@
                             </span>
                         </div>
 
-                        <div class="column c-info-block">
+                        <div class="c-info-block">
                             <span class="c-info-block__label">
                                 Current Account
                             </span>
@@ -174,7 +174,7 @@
                             </span>
                         </div>
 
-                        <div class="column c-info-block">
+                        <div class="c-info-block">
                             <span class="c-info-block__label">
                                 Salary
                             </span>
@@ -478,7 +478,7 @@
                     <label class="label">Category</label>
                     <div class="control">
                         <div class="select">
-                            <select placeholder="category..." v-model="skills.category">
+                            <select placeholder="category..." [(ngModel)]="skills.category">
                                 <option value="1">Development</option>
                                 <option value="2">Analyst</option>
                             </select>
@@ -488,7 +488,7 @@
                 <div class="field">
                     <label class="label">Skill</label>
                     <div class="select">
-                        <select placeholder="category..." v-model="skills.skill">
+                        <select placeholder="skill..." [(ngModel)]='skills.skill'>
                             <option>C#</option>
                             <option>Java</option>
                         </select>
@@ -498,15 +498,15 @@
                 <div class="field">
                     <label class="label">Rating</label>
                     <div class="control">
-                        <input class="input" type="number" placeholder="0" value="0" max="5" v-model="skills.rating" />
+                        <input class="input" type="number" placeholder="0" value="0" max="5" [(ngModel)]='skills.rating' />
                     </div>
                 </div>
             </section>
             <footer class="modal-card-foot">
-                <button class="button is-success" v-on:click="saveSkill">
+                <button class="button is-success"(click)="saveSkill()">
                     Add Skill
                 </button>
-                <button class="button" v-on:click="closeAndCancelAddSkillModal">
+                <button class="button" (click)="closeAndCancelAddSkillModal()">
                     Cancel
                 </button>
             </footer>
