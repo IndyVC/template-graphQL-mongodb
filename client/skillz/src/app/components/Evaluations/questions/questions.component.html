@@ -1,1 +1,112 @@
-<p>questions works!</p>
+<div class="c-content-page">
+    <header class="c-content-page__header">
+      <div class="c-content-page__header-title">
+        <h1>Questions</h1>
+        <nav class="breadcrumb" aria-label="breadcrumbs">
+          <ul>
+            <li><a href="#">Skillz</a></li>
+            <li><a href="#">Evaluations</a></li>
+            <li class="is-active">
+              <a href="#" aria-current="page">Questions</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+      <div class="c-content-page__header-actions">
+        <button class="button is-primary" (click)="showAddQuestionModal()">
+          <span class="icon"><i class="fas fa-plus"></i></span>
+          <span>Add Question</span>
+        </button>
+      </div>
+    </header>
+    <section class="c-content-page__content">
+      <table class="c-table c-questions">
+        <thead>
+          <tr>
+            <th></th>
+            <th>Question</th>
+            <th>Category</th>
+            <th>Subgroup</th>
+            <th>Profile</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr  class="c-question" *ngFor="let q of questions$ | async">
+           <td class="c-question__icon">
+              <i class="fas fa-question-circle"></i>
+            </td>
+            <td class="c-question__question">
+             {{q.title}}
+            </td>
+            <td class="c-question__group">{{q.evaluationQuestionCategory.title}}</td>
+            <td class="c-question__sub-group"> {{q.evaluationQuestionGroup.title}}</td>
+            <td class="c-category"></td>
+            
+          
+          </tr>
+         
+        </tbody>
+      </table>
+    </section>
+
+    <div class="modal" v-bind:class="{ 'is-active': isActive }">
+      <div class="modal-background"></div>
+      <div class="modal-card">
+        <header class="modal-card-head">
+          <p class="modal-card-title">New Question</p>
+          <button
+            class="delete"
+            aria-label="close"
+           (click)="closeAddQuestionModal()"
+          ></button>
+        </header>
+        <section class="modal-card-body">
+          <div class="field">
+            <label class="label">Title</label>
+            <div class="control">
+              <input class="input" type="text" placeholder="question..." [(ngModel)]="question.title" />
+            </div>
+          </div>
+
+          <div class="field">
+            <label class="label">Description</label>
+            <div class="control">
+              <textarea
+                class="textarea"
+                placeholder="description..."
+                [(ngModel)]="question.description"
+              ></textarea>
+            </div>
+          </div>
+
+          <div class="field">
+            <label class="label">Category</label>
+            <div class="control">
+              <div class="select">
+                <select placeholder="category..." [(ngModel)]="question.category">
+                  <option value="0">CATEGORIES DO NOT EXIST IN BACKEND</option>
+                </select>
+              </div>
+            </div>
+          </div>
+
+          <div class="field">
+            <label class="label">Group</label>
+            <div class="control">
+              <div class="select">
+                <select placeholder="group..." [(ngModel)]="question.group">
+                  <option value="0">GROUPS DO NOT EXIST IN BACKEND</option>
+                </select>
+              </div>
+            </div>
+          </div>
+        </section>
+        <footer class="modal-card-foot">
+          <button class="button is-success" (click)="saveQuestion()" >Add Question</button>
+          <button class="button" (click)="closeAndCancelAddQuestionModal()">
+            Cancel
+          </button>
+        </footer>
+      </div>
+    </div>
+  </div>

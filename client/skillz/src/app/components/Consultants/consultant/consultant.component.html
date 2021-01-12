@@ -1,14 +1,15 @@
 <div class="c-content-page">
     <header class="c-content-page__header">
         <div class="c-content-page__header-title">
-            <h1>CONSULT.[property] hardcoded</h1>
+            <h1>{{(consultant$ | async)?.firstName + " " + (consultant$ | async)?.lastName}}</h1>
             <nav class="breadcrumb" aria-label="breadcrumbs">
                 <ul>
                     <li><a href="#">Skillz</a></li>
                     <li><a href="/skillz/consultants">Consultants</a></li>
                     <li class="is-active">
                         <a href="#" aria-current="page">
-                        CONSULT.[property] hardcoded</a>
+                            {{(consultant$ | async)?.firstName + " " + (consultant$ | async)?.lastName}}
+                        </a>
                     </li>
                 </ul>
             </nav>
@@ -48,24 +49,24 @@
                 <table class="c-info-table">
                     <tr>
                         <td>
-                            <div class="column c-info-block">
+                            <div class="c-info-block">
                                 <span class="c-info-block__label">
                                     Function name
                                 </span>
                                 <span class="c-info-block__value">
-                                    CONSULT.[property] hardcoded 
-                                    CONSULT.[property] hardcoded
+                                    {{(consultant$ | async)?.functionLevel}}
+                                    {{(consultant$ | async)?.functionName}}
                                 </span>
                             </div>
                         </td>
 
                         <td>
-                            <div class="column c-info-block">
+                            <div class="c-info-block">
                                 <span class="c-info-block__label">
                                     Personal email
                                 </span>
                                 <span class="c-info-block__value">
-                                    <a href="mailto:kevin.derudder@gmail.com">CONSULT.[property] hardcoded</a>
+                                    <a href="mailto:kevin.derudder@gmail.com">{{(consultant$ | async)?.email}}</a>
                                 </span>
                             </div>
                         </td>
@@ -75,7 +76,7 @@
                                     Work email
                                 </span>
                                 <span class="c-info-block__value">
-                                    <a href="mailto:kevin.derudder@gmail.com">CONSULT.[property] hardcoded</a>
+                                    <a href="mailto:kevin.derudder@gmail.com">{{(consultant$ | async)?.email}}</a>
                                 </span>
                             </div>
                         </td>
@@ -94,22 +95,22 @@
                     </tr>
                     <tr>
                         <td>
-                            <div class=" c-info-block">
+                            <div class="c-info-block">
                                 <span class="c-info-block__label">
                                     Work phone
                                 </span>
                                 <span class="c-info-block__value">
-                                    CONSULT.[property] hardcoded
+                                   {{(consultant$ | async)?.phone}}
                                 </span>
                             </div>
                         </td>
                         <td>
-                            <div class="column c-info-block">
+                            <div class="c-info-block">
                                 <span class="c-info-block__label">
                                     Personal phone
                                 </span>
                                 <span class="c-info-block__value">
-                                    CONSULT.[property] hardcoded
+                                    {{(consultant$ | async)?.mobilePhone}}
                                 </span>
                             </div>
                         </td>
@@ -123,14 +124,12 @@
             </p>
             <p class="panel-tabs">
                 <a [ngClass]="{ 'is-active': panelActive === 'contracts' }"
-                   (click)="show($event, 'contracts')">Contract</a>
+                    (click)="show($event, 'contracts')">Contract</a>
                 <a [ngClass]="{ 'is-active': panelActive === 'passedContracts' }"
-                   (click)="show($event, 'passedContracts')">Contract History</a>
-                <a (click)="show($event, 'evals')"
-                    [ngClass]="{ 'is-active': panelActive === 'evals' }">Evaluations
+                    (click)="show($event, 'passedContracts')">Contract History</a>
+                <a (click)="show($event, 'evals')" [ngClass]="{ 'is-active': panelActive === 'evals' }">Evaluations
                 </a>
-                <a (click)="show($event, 'skills')"
-                   [ngClass]="{ 'is-active': panelActive === 'skills' }">Skills</a>
+                <a (click)="show($event, 'skills')" [ngClass]="{ 'is-active': panelActive === 'skills' }">Skills</a>
                 <a>Vault</a>
                 <a>Certificates</a>
                 <a (click)="show($event, 'notes')" [ngClass]="{ 'is-active': panelActive === 'notes' }">Notes</a>
@@ -139,7 +138,7 @@
                 <h2>Current</h2>
                 <div class="c-info-overview">
                     <div class="c-info-overview__body">
-                        <div class="column c-info-block">
+                        <div class="c-info-block">
                             <span class="c-info-block__label">
                                 Functie
                             </span>
@@ -148,7 +147,7 @@
                             </span>
                         </div>
 
-                        <div class="column c-info-block">
+                        <div class="c-info-block">
                             <span class="c-info-block__label">
                                 Start date
                             </span>
@@ -157,7 +156,7 @@
                             </span>
                         </div>
 
-                        <div class="column c-info-block">
+                        <div class="c-info-block">
                             <span class="c-info-block__label">
                                 End date
                             </span>
@@ -166,7 +165,7 @@
                             </span>
                         </div>
 
-                        <div class="column c-info-block">
+                        <div class="c-info-block">
                             <span class="c-info-block__label">
                                 Current Account
                             </span>
@@ -175,7 +174,7 @@
                             </span>
                         </div>
 
-                        <div class="column c-info-block">
+                        <div class="c-info-block">
                             <span class="c-info-block__label">
                                 Salary
                             </span>
@@ -232,7 +231,7 @@
             </div>
 
             <div class="panel-block panel-block--no-padding panel-tabs__tabinfo"
-               [ngClass]="{ 'is-active': panelActive === 'passedContracts' }">
+                [ngClass]="{ 'is-active': panelActive === 'passedContracts' }">
                 <table class="c-table">
                     <thead>
                         <tr>
@@ -474,12 +473,12 @@
                 <p class="modal-card-title">Add new skill to Consultant</p>
                 <button class="delete" aria-label="close" (click)="closeAndCancelAddSkillModal()"></button>
             </header>
-            <section class="modal-card-body" []>
+            <section class="modal-card-body">
                 <div class="field">
                     <label class="label">Category</label>
                     <div class="control">
                         <div class="select">
-                            <select placeholder="category..." v-model="skills.category">
+                            <select placeholder="category..." [(ngModel)]="skills.category">
                                 <option value="1">Development</option>
                                 <option value="2">Analyst</option>
                             </select>
@@ -489,7 +488,7 @@
                 <div class="field">
                     <label class="label">Skill</label>
                     <div class="select">
-                        <select placeholder="category..." v-model="skills.skill">
+                        <select placeholder="skill..." [(ngModel)]='skills.skill'>
                             <option>C#</option>
                             <option>Java</option>
                         </select>
@@ -499,15 +498,15 @@
                 <div class="field">
                     <label class="label">Rating</label>
                     <div class="control">
-                        <input class="input" type="number" placeholder="0" value="0" max="5" v-model="skills.rating" />
+                        <input class="input" type="number" placeholder="0" value="0" max="5" [(ngModel)]='skills.rating' />
                     </div>
                 </div>
             </section>
             <footer class="modal-card-foot">
-                <button class="button is-success" v-on:click="saveSkill">
+                <button class="button is-success"(click)="saveSkill()">
                     Add Skill
                 </button>
-                <button class="button" v-on:click="closeAndCancelAddSkillModal">
+                <button class="button" (click)="closeAndCancelAddSkillModal()">
                     Cancel
                 </button>
             </footer>

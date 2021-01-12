@@ -1,1 +1,275 @@
-<p>skills works!</p>
+<div class="c-content-page">
+    <header class="c-content-page__header">
+        <div class="c-content-page__header-title">
+            <h1>Skills</h1>
+            <nav class="breadcrumb" aria-label="breadcrumbs">
+                <ul>
+                    <li><a href="#">Skillz</a></li>
+                    <li><a href="#" aria-current="page">Skills</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div class="c-content-page__header-actions">
+            <button class="button is-primary" (click)="showAddSkillModal()">
+                <span class="icon"><i class="fas fa-plus"></i></span>
+                <span>Add Skill</span>
+            </button>
+        </div>
+    </header>
+    <section class="c-content-page__content">
+        <table class="c-table c-questions">
+            <thead>
+                <tr>
+                    <th></th>
+                    <th>Title</th>
+                    <th>Description</th>
+                    <th>Category</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="c-question">
+                    <td class="c-question__icon">
+                        <i class="fas fa-brain"></i>
+                    </td>
+                    <td class="c-question__name">C#</td>
+                    <td class="c-question__name">-</td>
+                    <td class="c-question__email">
+                        <div class="c-tags">
+                            <span class="tag">Development</span><span class="tag">Back-end</span>
+                        </div>
+                    </td>
+                </tr>
+                <tr class="c-question">
+                    <td class="c-question__icon">
+                        <i class="fas fa-brain"></i>
+                    </td>
+                    <td class="c-question__name">Vertel eens een mop</td>
+                    <td class="c-question__name">-</td>
+                    <td class="c-question__email">
+                        <span class="tag">Communications</span>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+        <article class="panel is-primary">
+            <p class="panel-heading">
+                Skills Information
+            </p>
+            <p class="panel-tabs">
+                <a [ngClass]="{ 'is-active': panelActive === 'dev' }" (click)="show($event, 'dev')">Development</a>
+                <a [ngClass]="{ 'is-active': panelActive === 'analyse' }" (click)="show($event, 'analyse')">Analyse</a>
+                <a [ngClass]="{ 'is-active': panelActive === 'soft' }" (click)="show($event, 'soft')">Soft Skills
+                </a>
+            </p>
+
+            <div class="panel-block panel-block--no-padding  c-grouped-table"
+                [ngClass]="{ 'is-active': panelActive === 'dev' }">
+                <header class="c-grouped-table__header">Programmeertalen</header>
+                <table class="c-table c-questions">
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th>Skill</th>
+                            <th>Level</th>
+                            <th>Score</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="c-question">
+                            <td class="c-question__icon">
+                                <i class="fas fa-brain"></i>
+                            </td>
+                            <td class="c-question__name">C#</td>
+                            <td class="c-question__name">Medior</td>
+                            <td class="c-stars">
+                                <i class="fas fa-star star star-succeed"></i><i
+                                    class="fas fa-star star star-succeed"></i><i
+                                    class="fas fa-star star star-succeed"></i><i class="fas fa-star star"></i><i
+                                    class="fas fa-star star"></i>
+                            </td>
+                        </tr>
+                        <tr class="c-question">
+                            <td class="c-question__icon">
+                                <i class="fas fa-brain"></i>
+                            </td>
+                            <td class="c-question__name">Entity Framework Core</td>
+                            <td class="c-question__name">Medior</td>
+                            <td class="c-stars">
+                                <i class="fas fa-star star star-succeed"></i><i
+                                    class="fas fa-star star star-succeed"></i><i class="fas fa-star star"></i><i
+                                    class="fas fa-star star"></i><i class="fas fa-star star"></i>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <header class="c-grouped-table__header">Tools</header>
+                <table class="c-table c-questions">
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th>Skill</th>
+                            <th>Level</th>
+                            <th>Score</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="c-question">
+                            <td class="c-question__icon">
+                                <i class="fas fa-brain"></i>
+                            </td>
+                            <td class="c-question__name">Visual Studio</td>
+                            <td class="c-question__name">Medior</td>
+                            <td class="c-stars">
+                                <i class="fas fa-star star star-succeed"></i><i
+                                    class="fas fa-star star star-succeed"></i><i
+                                    class="fas fa-star star star-succeed"></i><i
+                                    class="fas fa-star star star-succeed"></i><i
+                                    class="fas fa-star star star-succeed"></i>
+                            </td>
+                        </tr>
+                        <tr class="c-question">
+                            <td class="c-question__icon">
+                                <i class="fas fa-brain"></i>
+                            </td>
+                            <td class="c-question__name">Entity Framework Core</td>
+                            <td class="c-question__name">Medior</td>
+                            <td class="c-stars">
+                                <i class="fas fa-star star star-succeed"></i><i
+                                    class="fas fa-star star star-succeed"></i><i class="fas fa-star star"></i><i
+                                    class="fas fa-star star"></i><i class="fas fa-star star"></i>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="panel-block panel-block--no-paddingg panel-tabs__tabinfo c-grouped-table"
+                [ngClass]="{ 'is-active': panelActive === 'analyse' }">
+                <table class="c-table c-questions">
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th>Skill</th>
+                            <th>Level</th>
+                            <th>Score</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="c-question">
+                            <td class="c-question__icon">
+                                <i class="fas fa-brain"></i>
+                            </td>
+                            <td class="c-question__name">C#</td>
+                            <td class="c-question__name">Medior</td>
+                            <td class="c-stars">
+                                <i class="fas fa-star star star-succeed"></i><i
+                                    class="fas fa-star star star-succeed"></i><i
+                                    class="fas fa-star star star-succeed"></i><i class="fas fa-star star"></i><i
+                                    class="fas fa-star star"></i>
+                            </td>
+                        </tr>
+                        <tr class="c-question">
+                            <td class="c-question__icon">
+                                <i class="fas fa-brain"></i>
+                            </td>
+                            <td class="c-question__name">Entity Framework Core</td>
+                            <td class="c-question__name">Medior</td>
+                            <td class="c-stars">
+                                <i class="fas fa-star star star-succeed"></i><i
+                                    class="fas fa-star star star-succeed"></i><i class="fas fa-star star"></i><i
+                                    class="fas fa-star star"></i><i class="fas fa-star star"></i>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="panel-block panel-block--no-paddingg panel-tabs__tabinfo c-grouped-table"
+                [ngClass]="{ 'is-active': panelActive === 'soft' }">
+                <table class="c-table c-questions">
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th>Skill</th>
+                            <th>Level</th>
+                            <th>Score</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="c-question">
+                            <td class="c-question__icon">
+                                <i class="fas fa-brain"></i>
+                            </td>
+                            <td class="c-question__name">Lezen</td>
+                            <td class="c-question__name">Medior</td>
+                            <td class="c-stars">
+                                <i class="fas fa-star star star-succeed"></i><i
+                                    class="fas fa-star star star-succeed"></i><i
+                                    class="fas fa-star star star-succeed"></i><i class="fas fa-star star"></i><i
+                                    class="fas fa-star star"></i>
+                            </td>
+                        </tr>
+                        <tr class="c-question">
+                            <td class="c-question__icon">
+                                <i class="fas fa-brain"></i>
+                            </td>
+                            <td class="c-question__name">Entity Framework Core</td>
+                            <td class="c-question__name">Medior</td>
+                            <td class="c-stars">
+                                <i class="fas fa-star star star-succeed"></i><i
+                                    class="fas fa-star star star-succeed"></i><i class="fas fa-star star"></i><i
+                                    class="fas fa-star star"></i><i class="fas fa-star star"></i>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </article>
+    </section>
+
+    <div class="modal" [ngClass]="{ 'is-active': isActive }">
+        <div class="modal-background"></div>
+        <div class="modal-card">
+            <header class="modal-card-head">
+                <p class="modal-card-title">New Skill</p>
+                <button class="delete" aria-label="close" (click)="closeAddSkillModal()"></button>
+            </header>
+            <section class="modal-card-body">
+                <div class="field">
+                    <label class="label">Title</label>
+                    <div class="control">
+                        <input class="input" type="text" placeholder="skills..." [(ngModel)]='skill' />
+                    </div>
+                </div>
+                <div class="field">
+                    <label class="label">Description</label>
+                    <div class="control">
+                        <textarea class="textarea" placeholder="description..." [(ngModel)]='description'></textarea>
+                    </div>
+                </div>
+
+                <div class="field">
+                    <label class="label">Category</label>
+                    <div class="control">
+                        <div class="select">
+                            <select placeholder="category..." [(ngModel)]="category">
+                                <option>Development</option>
+                                <option>Development</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <footer class="modal-card-foot">
+                <button class="button is-success" (click)="saveSkill()">
+                    Add Skill
+                </button>
+                <button class="button" (click)="closeAndCancelAddSkillModal()">
+                    Cancel
+                </button>
+            </footer>
+        </div>
+    </div>
+</div>
