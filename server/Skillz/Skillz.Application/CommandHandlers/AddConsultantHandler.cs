@@ -33,7 +33,7 @@ namespace Skillz.Application.CommandHandlers
                 request.FirstName,
                 request.LastName,
                 request.CompanyId);
-
+            consultant.Email = request.Email;
             consultant.Phone = request.Phone;
             consultant.MobilePhone = request.MobilePhone;
 

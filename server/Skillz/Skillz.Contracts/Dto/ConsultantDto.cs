@@ -7,30 +7,18 @@ namespace Skillz.Contracts.Dto
 {
     public class ConsultantDto
     {
-        [JsonProperty("id")]
         public Guid Id { get; set; }
-
-        [JsonProperty("firstname")]
         public string FirstName { get; set; }
-
-        [JsonProperty("lastname")]
         public string LastName { get; set; }
-
-        [JsonProperty("email")]
         public string Email { get; set; }
-
-        [JsonProperty("phone")]
         public string Phone { get; set; }
-
-        [JsonProperty("mobile")]
         public string MobilePhone { get; set; }
-
-        public ICollection<NoteDto> Notes { get; set; }
+        public string FunctionName { get; set; }
+        public string FunctionLevel { get; set; }
 
         public Guid CompanyId { get; set; }
         public CompanyDto Company { get; set; }
 
-        public string FunctionName { get; set; }
-        public string FunctionLevel { get; set; }
+        public ICollection<NoteDto> Notes { get; set; }
     }
 }
