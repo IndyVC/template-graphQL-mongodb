@@ -9,3 +9,8 @@ export const set_consultant = createAction(
   '[Consultant] set_consultant',
   props<{ consultant: Consultant }>()
 );
+
+export const add_consultant = createAction(
+  '[Consultant] add_consultant',
+  props<{ consultant: Consultant }>()
+)

@@ -15,6 +15,7 @@ import { ActivatedRoute, Router } from '@angular/router';
   templateUrl: './consultant.component.html',
   styleUrls: ['./consultant.component.sass'],
 })
+
 export class ConsultantComponent implements OnInit {
   consultant$: Observable<Consultant>;
 

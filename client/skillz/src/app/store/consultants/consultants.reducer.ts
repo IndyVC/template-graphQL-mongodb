@@ -1,5 +1,5 @@
 import { createReducer, on } from '@ngrx/store';
-import { set_consultant, set_consultants } from './consultants.actions';
+import { add_consultant, set_consultant, set_consultants } from './consultants.actions';
 
 export const initialState = {
   consultants: [],
@@ -15,6 +15,10 @@ const _consultantsReducer = createReducer(
   on(set_consultants, (state, { consultants }) => ({
     ...state,
     consultants: consultants,
+  })),
+  on(add_consultant, (state, { consultant }) => ({
+    ...state,
+    consultants: [consultant, ...state.consultants]
   }))
 );
 

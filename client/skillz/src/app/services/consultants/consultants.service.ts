@@ -9,7 +9,7 @@ import { Consultant } from 'src/app/models/consultants/consultant';
   providedIn: 'root',
 })
 export class ConsultantsService {
-  constructor(private httpClient: HttpClient) {}
+  constructor(private httpClient: HttpClient) { }
 
   getConsultants(): Observable<Consultant[]> {
     return this.httpClient
@@ -21,5 +21,10 @@ export class ConsultantsService {
     return this.httpClient
       .get(`${API_URL}/Consultants/${id}`)
       .pipe(map((v) => v as Consultant));
+  }
+
+  postConsultant(consultant): Observable<Consultant> {
+    return this.httpClient.post(`${API_URL}/Consultants`, consultant).pipe(map(v => v as Consultant))
+
   }
 }
