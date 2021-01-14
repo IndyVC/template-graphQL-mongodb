@@ -31,8 +31,10 @@ namespace Skillz.Api
         {
             services.AddControllers();
 
-            services.AddDbContext<SkillzDbContext>(options => {
-                options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection"), sqlOptions => {
+            services.AddDbContext<SkillzDbContext>(options =>
+            {
+                options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection"), sqlOptions =>
+                {
                     sqlOptions.EnableRetryOnFailure(maxRetryCount: 3, maxRetryDelay: TimeSpan.FromSeconds(30), errorNumbersToAdd: null);
                 });
             });
@@ -41,15 +43,7 @@ namespace Skillz.Api
             services.RegisterApplication();
             services.AddMediatR(typeof(Startup));
             services.RegisterSwagger();
-
-            //services.AddAuthentication("Bearer")
-            //        .AddJwtBearer("Bearer", options =>
-            //        {
-            //            options.Authority = "https://localhost:5001";
-            //            options.RequireHttpsMetadata = false;
-
-            //            options.Audience = "apiskillz";
-            //        });
+            services.RegisterAuthentication(Configuration);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -64,12 +58,13 @@ namespace Skillz.Api
 
             app.UseRouting();
             app.UseSwagger();
-            app.UseSwaggerUI(c => {
-                c.SwaggerEndpoint("/swagger/v1/swagger.json", "Skillz Api");
+            app.UseSwaggerUI(c =>
+            {
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "Clovis API");
             });
             app.ConfigureCors();
-            //app.UseAuthentication();
-            //app.UseAuthorization();
+            app.UseAuthentication();
+            app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
             {
