@@ -1,5 +1,8 @@
-﻿using Microsoft.AspNetCore.Builder;
+﻿using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Builder;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 using Skillz.Models.Companies;
 using Skillz.Models.Consultants;
@@ -13,6 +16,7 @@ using Skillz.Repositories;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text;
 using System.Threading.Tasks;
 
 namespace Skillz.Api
@@ -51,6 +55,26 @@ namespace Skillz.Api
 
             app.UseCors(x => x.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader());
 
+        }
+
+        public static void RegisterAuthentication(this IServiceCollection services, IConfiguration configuration)
+        {
+            var signingKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(configuration["JWT:ServerSecret"]));
+
+            services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJwtBearer(config => {
+                config.TokenValidationParameters = new TokenValidationParameters()
+                {
+                    ValidateIssuer = true,
+                    ValidateAudience = true,
+                    ValidateLifetime = true,
+                    ValidateIssuerSigningKey = true,
+                    IssuerSigningKey = signingKey,
+                    ValidAudience = configuration["JWT:Audience"],
+                    ValidIssuer = configuration["JWT:Issuer"]
+                };
+
+                config.SaveToken = true;
+            });
         }
     }
 }
