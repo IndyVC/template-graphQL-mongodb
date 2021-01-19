@@ -3,13 +3,15 @@ import { Cat } from "./models/Cat";
 export const resolvers = {
   Query: {
     hello: () => "Hello!",
+    cats: () => Cat.find(),
   },
   Mutation: {
     //par1 = parent
     //par2 = arguments passed to the function. Destructuring it to get the exact properties.
-    createCat: (_, { name }) => {
+    createCat: async (_, { name }) => {
       const kitty = new Cat({ name });
-      return kitty.save();
+      await kitty.save();
+      return kitty;
     },
   },
 };
